@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenSky Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login Section -->
+<div id="loginBox">
+  <h3>Login / Register</h3>
+  <input id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <button onclick="register()">Register</button>
+</div>
+
+<!-- Dashboard Section -->
+<div id="dashboard" style="display:none;">
+  <h2>Welcome, <span id="user"></span></h2>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><button onclick="showDeposit()">Deposit</button></li>
+      <li><button onclick="showWithdraw()">Withdraw</button></li>
+      <li><button onclick="showTrading()">Trading</button></li>
+      <li><button onclick="showCrypto()">Crypto</button></li>
+      <li><button onclick="showSocial()">Social Media</button></li>
+      <li><button onclick="logout()">Logout</button></li>
+    </ul>
+  </nav>
+
+  <!-- Deposit Section -->
+  <div id="deposit" style="display:none;">
+    <h3>Deposit</h3>
+    <p>Deposit amount: <input type="number" id="depositAmount" placeholder="Amount" min="3"></p>
+    <p>Deposit Address: <span id="depositAddress">BNB: 0xaD592e89d331C3e8DB571472365faa6dD942501f</span></p>
+    <button onclick="deposit()">Deposit</button>
+  </div>
+
+  <!-- Withdraw Section -->
+  <div id="withdraw" style="display:none;">
+    <h3>Withdraw</h3>
+    <p>Withdraw amount: <input type="number" id="withdrawAmount" placeholder="Amount" min="9"></p>
+    <p>Withdraw Address: <span id="withdrawAddress">USDTBEP20: 0xaD592e89d331C3e8DB571472365faa6dD942501f</span></p>
+    <button onclick="withdraw()">Withdraw</button>
+  </div>
+
+  <!-- Crypto Section -->
+  <div id="crypto" style="display:none;">
+    <h3>Crypto Stats</h3>
+    <p>Current Value of BTC: <span id="cryptoValue">Loading...</span></p>
+  </div>
+
+  <!-- Social Media Section -->
+  <div id="social" style="display:none;">
+    <h3>Social Media</h3>
+    <ul>
+      <li><a href="https://www.tiktok.com">TikTok</a></li>
+      <li><a href="https://www.youtube.com">YouTube</a></li>
+      <li><a href="https://www.instagram.com">Instagram</a></li>
+      <li><a href="https://www.x.com">X</a></li>
+      <li><a href="https://web.telegram.org">Telegram</a></li>
+    </ul>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
